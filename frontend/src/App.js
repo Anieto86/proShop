@@ -4,6 +4,7 @@ const App = () => {
   return (
     <>
       <h1>Welcom to my proShop e-commerce</h1>
+      <h2>MERN</h2>
     </>
   );
 };
