@@ -8,9 +8,9 @@ const Rating = ({ value, text, color }) => {
   return (
     <div className="rating">
       <span>
-        <i 
-        style={{color}}
-        className={
+        <i
+          style={{ color }}
+          className={
             value >= 1
               ? "fas fa-star"
               : value >= 0.5
@@ -21,7 +21,7 @@ const Rating = ({ value, text, color }) => {
       </span>
       <span>
         <i
-         style={{color}}
+          style={{ color }}
           className={
             value >= 2
               ? "fas fa-star"
@@ -33,11 +33,11 @@ const Rating = ({ value, text, color }) => {
       </span>
       <span>
         <i
-        style={{color}}
+          style={{ color }}
           className={
             value >= 3
               ? "fas fa-star"
-              : value >=2.5
+              : value >= 2.5
               ? "fas fa-star-half-alt"
               : "far fa-star"
           }
@@ -45,7 +45,7 @@ const Rating = ({ value, text, color }) => {
       </span>
       <span>
         <i
-         style={{color}}
+          style={{ color }}
           className={
             value >= 4
               ? "fas fa-star"
@@ -57,7 +57,7 @@ const Rating = ({ value, text, color }) => {
       </span>
       <span>
         <i
-        style={{color}}
+          style={{ color }}
           className={
             value >= 5
               ? "fas fa-star"
@@ -68,15 +68,14 @@ const Rating = ({ value, text, color }) => {
         ></i>
       </span>
       {/* Si hay tenxto muestralo  {text && text} */}
-        <span>{text && text}</span>
+      <span>{text && text}</span>
     </div>
   );
 };
 
-//*otra forma de pasar los colores // en vez de un prop en proucts es
+//*otra forma de pasar los colores // en vez de un prop en proucts es con defaultProps.
 // Rating.defaultProps ={
 //     color: '#f8e825',
 // }
-
 
 export default Rating;
