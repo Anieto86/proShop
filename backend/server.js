@@ -14,7 +14,7 @@ app.get('/api/products', (req, res)=>{
 
 //todo this route is unsing the ID
 app.get('/api/products/:id', (req, res)=>{
-    const product = products.find(p => p._id === req.params.id);
+    const product = products.find((p) => p._id === req.params.id);
     res.json(product)
 })
 
