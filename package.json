@@ -1,0 +1,27 @@
+{
+  "name": "proshop",
+  "version": "1.0.0",
+  "description": "MERN e-shop",
+  "main": "server.js",
+  "scripts": {
+    "start": "node backend/server "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anieto86/proShop.git"
+  },
+  "keywords": [
+    "MERN",
+    "app"
+  ],
+  "author": "Alvaro Nieto",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Anieto86/proShop/issues"
+  },
+  "homepage": "https://github.com/Anieto86/proShop#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.4"
+  }
+}
