@@ -1,5 +1,6 @@
-import React from "react";
+import React, {useState, useEffect }from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   Row,
   Col,
@@ -12,14 +13,22 @@ import {
 
 //!Components
 import Rating from "../components/Rating";
-import products from "../products";
 
 const ProductScreen = ({ match, color }) => {
-  //esto permimite machear los disntots id dinamicamente
-  const product = products.find((p) => p._id === match.params.id);
+
+  const [product, setProduct] = useState({})
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      const {data} = await axios.get(`/api/products/${match.params.id}`);
+      setProduct(data)
+    }
+    fetchProduct();
+  },);
+  
   return (
     <>
-      <Link className="btn btn-light my-3">Go Back</Link>
+      <Link to={'/'} className="btn btn-light my-3">Go Back</Link>
       <Row>
         <Col md={6}>
           {/* Fluid para mantener la imagen dentro del col */}
