@@ -24,7 +24,7 @@ const ProductScreen = ({ match, color }) => {
       setProduct(data)
     }
     fetchProduct();
-  },);
+  },[match]);
   
   return (
     <>
