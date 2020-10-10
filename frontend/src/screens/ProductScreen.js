@@ -15,7 +15,6 @@ import {
 import Rating from "../components/Rating";
 
 const ProductScreen = ({ match, color }) => {
-
   const [product, setProduct] = useState({})
 
   useEffect(() => {
