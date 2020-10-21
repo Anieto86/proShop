@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
-
+const Schema = mongoose.Schema;
 //todo Model order schema
 
-const orderSchema = mongoose.Schema(
+const orderSchema = new Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,

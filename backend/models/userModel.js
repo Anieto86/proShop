@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-
+const Schema = mongoose.Schema;
 
 
 //todo Model user schema
-const userSchema = mongoose.Schema(
+const userSchema = new Schema(
   {
     name: {
       type: String,

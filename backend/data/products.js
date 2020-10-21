@@ -5,7 +5,7 @@ const products = [
     image: '/images/airpods.jpg',
     description:
       'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
-    brand: 'Apple',
+    brand: 'Apples', // todo aca hay un problema BulkWriteError: E11000 duplicate key error collection: proShopDB.products index: brand_1 dup key: { brand: "Apple" } lo arrelge poniendo apples | poniendo cada campo de brand distinto por que appples esta repetido. 
     category: 'Electronics',
     price: 89.99,
     countInStock: 10,
@@ -39,7 +39,6 @@ const products = [
     numReviews: 12,
   },
   {
-    
     name: 'Sony Playstation 4 Pro White Version',
     image: '/images/playstation.jpg',
     description:
@@ -52,7 +51,6 @@ const products = [
     numReviews: 12,
   },
   {
-    
     name: 'Logitech G-Series Gaming Mouse',
     image: '/images/mouse.jpg',
     description:
