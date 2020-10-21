@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
-const userSchema = mongoose.schema;
+
 
 //todo Model user schema
-const userSchema = new Schema(
+const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -28,6 +28,7 @@ const userSchema = new Schema(
     timestamp: true,
   }
 );
+
 
 const User = mongoose.model("User", userSchema);
 export default User;

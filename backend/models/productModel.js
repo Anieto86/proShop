@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 //todo Model reviews schema | is also exported with user.
-const reviewsSchema = mongoose.Schema;
-const reviewsSchema = new Schema(
+
+const reviewsSchema = mongoose.Schema(
   {
     name: { type: String, required: true },
     rating: { type: Number, required: true },
@@ -15,8 +15,8 @@ const reviewsSchema = new Schema(
 
 
 //todo Model product schema
-const productSchema = mongoose.Schema;
-const productSchema = new Schema(
+
+const productSchema =mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
