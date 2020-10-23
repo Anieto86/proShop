@@ -1,7 +1,7 @@
 //*recordar este file es para poner las rutas y no dejar las rutas en nuesto servidor.
 
 import express from "express";
-//todo llamaos al modelo para hacer las busquedas en la rutas
+//todo llamamos al modelo para hacer las busquedas en la rutas
 import Product from "../models/productModel.js";
 import asyncHandler from "express-async-handler";
 
