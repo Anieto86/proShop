@@ -30,8 +30,8 @@ const ProductScreen = ({ history, match, color }) => {
   }, [dispatch, match]);
 
   const addToCardHandler = () => {
-    history.push(`/cart/${match.params.id}?qty=${qty}`)
-  }
+    history.push(`/cart/${match.params.id}?qty=${qty}`);
+  };
 
   return (
     <>
@@ -84,7 +84,6 @@ const ProductScreen = ({ history, match, color }) => {
                     </Col>
                   </Row>
                 </ListGroupItem>
-
                 {product.countInStock > 0 && (
                   <ListGroupItem>
                     <Row>
