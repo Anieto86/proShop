@@ -19,7 +19,7 @@ const App = () => {
         <Container>
           <Route path="/" component={HomeScreen} exact/>
           <Route path="/product/:id" component={ProductScreen}/>
-          <Route patn="/cart/:id" component={CartScreen}/>
+          <Route patn="/cart/:id?" component={CartScreen}/>
         </Container>
       </main>
       <Footer />
