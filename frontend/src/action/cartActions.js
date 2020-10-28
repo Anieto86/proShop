@@ -2,7 +2,7 @@ import axios from "axios";
 
 import { CART_ADD_ITEM } from "../constants/cartConstants.js";
 
-export const addCart = (id, qty) => async (dispatch, getState) => {
+export const addToCart = (id, qty) => async (dispatch, getState) => {
   const { data } = await axios.get(`/api/products${id}`);
 
   dispatch({ type: CART_ADD_ITEM, 
@@ -12,11 +12,10 @@ export const addCart = (id, qty) => async (dispatch, getState) => {
        image: data.image,
        price: data.price,
        countInStock: data.countInStock,
-       qty
+       qty,
     },
     })
 
-//todo para guardar en el local store
+//todo para guardar en el local store | se usa el JSON.stringify en el local storage por que solo almacena strings
         localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems))
-
 };
