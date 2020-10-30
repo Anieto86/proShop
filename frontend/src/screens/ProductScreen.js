@@ -6,7 +6,7 @@ import Rating from "../components/Rating";
 import Loader from "../components/Loader.js";
 import Message from "../components/Message.js";
 //todo import ListProducts
-import { listProductDetails } from "../action/productActions";
+import { listProductDetails } from "../actions/productActions";
 import {
   Row,
   Col,
@@ -85,7 +85,7 @@ const ProductScreen = ({ history, match, color }) => {
                   </Row>
                 </ListGroupItem>
                 {product.countInStock > 0 && (
-                  <ListGroupItem>
+                  <ListGroup.Item>
                     <Row>
                       <Col>Qty</Col>
                       <Col>
@@ -102,7 +102,7 @@ const ProductScreen = ({ history, match, color }) => {
                         </Form.Control>
                       </Col>
                     </Row>
-                  </ListGroupItem>
+                  </ListGroup.Item>
                 )}
 
                 <ListGroupItem>

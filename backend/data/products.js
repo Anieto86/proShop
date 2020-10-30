@@ -1,19 +1,17 @@
 const products = [
   {
-    
     name: 'Airpods Wireless Bluetooth Headphones',
     image: '/images/airpods.jpg',
     description:
       'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
-    brand: 'Apples', // todo aca hay un problema BulkWriteError: E11000 duplicate key error collection: proShopDB.products index: brand_1 dup key: { brand: "Apple" } lo arrelge poniendo apples | poniendo cada campo de brand distinto por que appples esta repetido. 
+    brand: 'Apple',
     category: 'Electronics',
     price: 89.99,
-    countInStock: 10,
-    rating: 4.5,
-    numReviews: 12,
+    countInStock: 3,
+    rating: 0,
+    numReviews: 0,
   },
   {
-    
     name: 'iPhone 11 Pro 256GB Memory',
     image: '/images/phone.jpg',
     description:
@@ -21,12 +19,11 @@ const products = [
     brand: 'Apple',
     category: 'Electronics',
     price: 599.99,
-    countInStock: 7,
-    rating: 4.0,
-    numReviews: 8,
+    countInStock: 10,
+    rating: 0,
+    numReviews: 0,
   },
   {
-    
     name: 'Cannon EOS 80D DSLR Camera',
     image: '/images/camera.jpg',
     description:
@@ -34,9 +31,9 @@ const products = [
     brand: 'Cannon',
     category: 'Electronics',
     price: 929.99,
-    countInStock: 5,
-    rating: 3,
-    numReviews: 12,
+    countInStock: 0,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: 'Sony Playstation 4 Pro White Version',
@@ -46,9 +43,9 @@ const products = [
     brand: 'Sony',
     category: 'Electronics',
     price: 399.99,
-    countInStock: 11,
-    rating: 5,
-    numReviews: 12,
+    countInStock: 10,
+    rating: 0,
+    numReviews: 0,
   },
   {
     name: 'Logitech G-Series Gaming Mouse',
@@ -59,11 +56,10 @@ const products = [
     category: 'Electronics',
     price: 49.99,
     countInStock: 7,
-    rating: 3.5,
-    numReviews: 10,
+    rating: 0,
+    numReviews: 0,
   },
   {
-    
     name: 'Amazon Echo Dot 3rd Generation',
     image: '/images/alexa.jpg',
     description:
@@ -72,9 +68,9 @@ const products = [
     category: 'Electronics',
     price: 29.99,
     countInStock: 0,
-    rating: 4,
-    numReviews: 12,
-  }
-
+    rating: 0,
+    numReviews: 0,
+  },
 ]
- export default products
+
+export default products

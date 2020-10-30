@@ -2,7 +2,7 @@ import React from "react";
 //todo importa reactBoostrap
 import { Container, Row, Col } from "react-bootstrap";
 
-//import styled from 'styled-components';
+
 
 const Footer = () => {
   return (

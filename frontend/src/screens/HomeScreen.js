@@ -4,11 +4,8 @@ import Loader from "../components/Loader.js";
 import Message from "../components/Message.js";
 //todo importa reactBoostrap
 import { Row, Col } from "react-bootstrap";
-
-
 //todo import ListProducts
-import { listProducts } from "../action/productActions";
-
+import { listProducts } from "../actions/productActions";
 //Todo Bring dispatch REDUX
 import { useDispatch, useSelector } from "react-redux";
 
@@ -33,12 +30,12 @@ const HomeScreen = () => {
         <Message variant="danger">{error}</Message>
       ) : (
         <Row>
-          {products.map((product) => (
-            <Col sm={12} md={6} lg={4} xl={3} key={product._id}>
-              <Product product={product} />
-            </Col>
-          ))}
-        </Row>
+        {products.map((product) => (
+          <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
+            <Product product={product} />
+          </Col>
+        ))}
+      </Row>
       )}
     </>
   );

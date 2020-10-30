@@ -10,18 +10,18 @@ import {
   Button,
   Card,
 } from "react-bootstrap";
-import Message from "../components/Message.js";
-// todo tenemos acceso a el todos los productos por este objeto hecho en REDUX cartActions
-import { addToCart } from "../action/cartActions";
+import Message from "../components/Message";
+import { addToCart, removeFromCart } from "../actions/cartActions";
 
-// todo {match , history , location} destructured elements from REACT router
-const CartScreen = ({ match, history, location }) => {
+const CartScreen = ({ match, location, history }) => {
   const productId = match.params.id;
+
   const qty = location.search ? Number(location.search.split("=")[1]) : 1;
+
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart);
-  const { cartItems } = cart;
+  const { cartItems } = cart
 
   useEffect(() => {
     if (productId) {
@@ -30,11 +30,11 @@ const CartScreen = ({ match, history, location }) => {
   }, [dispatch, productId, qty]);
 
   const removeFromCartHandler = (id) => {
-    console.log("remove");
+    dispatch(removeFromCart(id));
   };
 
   const checkoutHandler = () => {
-   history.push('/login?redirect=shipping')
+    history.push("/login?redirect=shipping");
   };
 
   return (
@@ -43,7 +43,7 @@ const CartScreen = ({ match, history, location }) => {
         <h1>Shopping Cart</h1>
         {cartItems.length === 0 ? (
           <Message>
-            Your cart is empty<Link to="/"> Go Back</Link>
+            Your cart is empty <Link to="/">Go Back</Link>
           </Message>
         ) : (
           <ListGroup variant="flush">
@@ -54,7 +54,7 @@ const CartScreen = ({ match, history, location }) => {
                     <Image src={item.image} alt={item.name} fluid rounded />
                   </Col>
                   <Col md={3}>
-                    <Link to={`/products/${item.product}`}>{item.name}</Link>
+                    <Link to={`/product/${item.product}`}>{item.name}</Link>
                   </Col>
                   <Col md={2}>${item.price}</Col>
                   <Col md={2}>
@@ -77,10 +77,11 @@ const CartScreen = ({ match, history, location }) => {
                   <Col md={2}>
                     <Button
                       type="button"
-                      varian="light"
+                      variant="light"
                       onClick={() => removeFromCartHandler(item.product)}
-                    ></Button>
-                    <i className="fas fa-trash"></i>
+                    >
+                      <i className="fas fa-trash"></i>
+                    </Button>
                   </Col>
                 </Row>
               </ListGroup.Item>
@@ -93,8 +94,8 @@ const CartScreen = ({ match, history, location }) => {
           <ListGroup variant="flush">
             <ListGroup.Item>
               <h2>
-                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)}
-                )items
+                Subtotal ({cartItems.reduce((acc, item) => acc + item.qty, 0)})
+                items
               </h2>
               $
               {cartItems
@@ -104,11 +105,11 @@ const CartScreen = ({ match, history, location }) => {
             <ListGroup.Item>
               <Button
                 type="button"
-                className="btn btn-block"
-                // disabled={cartItems.length === 0}
+                className="btn-block"
+                disabled={cartItems.length === 0}
                 onClick={checkoutHandler}
               >
-                Checkout
+                Proceed To Checkout
               </Button>
             </ListGroup.Item>
           </ListGroup>
