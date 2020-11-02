@@ -1,7 +1,9 @@
 import mongoose from "mongoose";
+import bcrypt from "bcryptjs";
+
+
+
 const Schema = mongoose.Schema;
-
-
 //todo Model user schema
 const userSchema = new Schema(
   {
@@ -29,6 +31,10 @@ const userSchema = new Schema(
   }
 );
 
+//todo Para manejar la contrasenas con bcrypt creamos un methodo | la idea es usarlo en el modelo t llevarlo al controller
+userSchema.methods.matchPassword = async function (enteredPassword) {
+  return await bcrypt.compare(enteredPassword, this.password)
+}
 
 const User = mongoose.model("User", userSchema);
 export default User;

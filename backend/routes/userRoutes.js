@@ -3,18 +3,9 @@ import express from "express";
 const router = express.Router();
 
 //todo Cotrollers import
-import {
-  getProducts,
-  getProductById,
-} from "../controllers/productController.js";
-
+import { authUser } from "../controllers/userController.js";
 
 //!Product Routes
-router.route("/").get(getProducts)
-router.route("/:id").get(getProductById)
-
- 
-
-
+router.post("/login", authUser);
 
 export default router;
