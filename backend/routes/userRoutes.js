@@ -3,9 +3,13 @@ import express from "express";
 const router = express.Router();
 
 //todo Cotrollers import
-import { authUser } from "../controllers/userController.js";
+import { authUser, registerUser, getUserProfile } from "../controllers/userController.js";
+import {protect} from "../middleware/authMiddleware.js";
 
-//!Product Routes
 router.post("/login", authUser);
+router.route("/").post(registerUser)
+router.route("/profile").get(protect, getUserProfile)
+
+
 
 export default router;
