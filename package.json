@@ -12,6 +12,7 @@
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
     "proxy": "localhost:5000"
+    
   },
   "repository": {
     "type": "git",
