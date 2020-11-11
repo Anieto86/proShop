@@ -13,6 +13,7 @@ import { cartReducer } from "./reducers/cartReducers.js";
 import {
   userLoginReducer,
   userRegisterReducer,
+  userDetailsReducer,
 } from "./reducers/userReducers.js";
 
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ const reducer = combineReducers({
   cart: cartReducer,
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
+  userDetails: userDetailsReducer,
 });
 
 //todo  esto es para guardar cart items in the local storage
