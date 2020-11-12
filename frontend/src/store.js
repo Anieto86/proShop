@@ -14,7 +14,7 @@ import {
   userLoginReducer,
   userRegisterReducer,
   userDetailsReducer,
-  userUpdateProfileReducer
+  userUpdateProfileReducer,
 } from "./reducers/userReducers.js";
 
 const reducer = combineReducers({
@@ -24,20 +24,28 @@ const reducer = combineReducers({
   userLogin: userLoginReducer,
   userRegister: userRegisterReducer,
   userDetails: userDetailsReducer,
-  userUpdateProfile: userUpdateProfileReducer
+  userUpdateProfile: userUpdateProfileReducer,
 });
 
 //todo  esto es para guardar cart items in the local storage
 const cartItemsFromStorage = localStorage.getItem("cartItems")
   ? JSON.parse(localStorage.getItem("cartItems"))
   : [];
-// todo  esto es para guardar users in the local storage || para que hago esto?
+// todo  esto es para guardar users in the local storage
 const userInfoFromStorage = localStorage.getItem("userInfo")
   ? JSON.parse(localStorage.getItem("userInfo"))
   : null;
 
+// todo when our store initializes, if there's something in the local storage for the shipping we wanna add that to the state
+const shippingAddressFromStorage = localStorage.getItem("shippingAdress")
+  ? JSON.parse(localStorage.getItem("shippingAdress"))
+  : {};
+
 const initialState = {
-  cart: { cartItems: cartItemsFromStorage },
+  cart: {
+    cartItems: cartItemsFromStorage,
+    shippingAddress: shippingAddressFromStorage,
+  },
   userLogin: { userInfo: userInfoFromStorage },
 };
 

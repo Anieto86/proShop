@@ -123,34 +123,45 @@ export const getUserDetails = (id) => async (dispatch, getState) => {
   }
 };
 
-export const updateUserProfile  = (user) => async (dispatch, getState) => {
+export const updateUserProfile = (user) => async (dispatch, getState) => {
   try {
-    dispatch({ type: USER_UPDATE_PROFILE_REQUEST });
+    dispatch({
+      type: USER_UPDATE_PROFILE_REQUEST,
+    })
 
     const {
       userLogin: { userInfo },
-    } = getState;
+    } = getState()
 
-    // todo aca pasamos el token
     const config = {
       headers: {
-        "Content-Type": "application/json",
-        Authorization: `Barer ${userInfo.token}`,
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${userInfo.token}`,
       },
-    };
-    //todo here we paste the config for the header
-    const { data } = await axios.put(`/api/users/profile`,user, config);
+    }
+
+    const { data } = await axios.put(`/api/users/profile`, user, config)
+
     dispatch({
       type: USER_UPDATE_PROFILE_SUCCESS,
       payload: data,
-    });
+    })
+    dispatch({
+      type: USER_LOGIN_SUCCESS,
+      payload: data,
+    })
+    localStorage.setItem('userInfo', JSON.stringify(data))
   } catch (error) {
+    const message =
+      error.response && error.response.data.message
+        ? error.response.data.message
+        : error.message
+    if (message === 'Not authorized, token failed') {
+      dispatch(logout())
+    }
     dispatch({
       type: USER_UPDATE_PROFILE_FAIL,
-      payload:
-        error.response && error.response.data.message
-          ? error.response.data
-          : error.massage,
-    });
+      payload: message,
+    })
   }
-};
+}
